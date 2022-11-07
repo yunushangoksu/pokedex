@@ -1,38 +1,35 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headerLogo {
+  width: 300px;
 }
+/* .pokecard {
+  width: 95%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 150px);
+  border: solid black 1px;
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pokeCard {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border: solid black 1px;
+  width: 230px;
+  height: 350px;
+}
+.topBar {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 50px;
+  margin-top: 10px;
 }
-
-.App-link {
-  color: #61dafb;
+.bottomBar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pokeImage img {
+  width: 150px;
 }
