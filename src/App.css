@@ -52,8 +52,13 @@
   border: 3px solid #ffcd00;
   outline: 3px solid #356abc;
   width: 230px;
-  height: 350px;
+  height: 360px;
   background-color: #ffffff;
+}
+
+.pokeStats {
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 .name::first-letter,
@@ -74,6 +79,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: space-between;
+  height: 100%;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.hp,
+.attack,
+.defense {
+  display: flex;
+  justify-content: space-between;
 }
 .pokeImage img {
   width: 150px;

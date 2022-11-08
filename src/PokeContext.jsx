@@ -4,6 +4,7 @@ export default PokeContext;
 
 export const PokeProvider = ({ children }) => {
   const [pokeData, setPokeData] = useState();
+  // const [pokeMoveData, setPokeMoveData] = useState();
   const [pokeName, setPokeName] = useState("ditto");
   const dataToPass = {
     pokeData,
@@ -20,6 +21,18 @@ export const PokeProvider = ({ children }) => {
     };
     fetchData();
   }, [pokeName]);
+
+  // useEffect(() => {
+  //   const fetchData = () => {
+  //     fetch(pokeData.moves[0].move.url)
+  //       .then((response) => response.json())
+  //       .then((data) => setPokeMoveData(data))
+  //       .catch((err) => console.log(err));
+  //   };
+  //   fetchData();
+  //   console.log(pokeData);
+  //   console.log(pokeMoveData);
+  // }, [pokeData]);
 
   return (
     <PokeContext.Provider value={dataToPass}>{children}</PokeContext.Provider>

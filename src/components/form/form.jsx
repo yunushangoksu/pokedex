@@ -7,7 +7,6 @@ function Form() {
 
   const onChangeInput = (event) => {
     setInputValue(event.target.value);
-    console.log(inputValue);
   };
 
   const handleSubmit = (event) => {
