@@ -1,9 +1,9 @@
-import React from "react";
+import { useContext } from "react";
+import PokeContext from "../../PokeContext";
 
 function List() {
-  return <div>
-    
-  </div>;
+  const pokeData = useContext(PokeContext);
+  return <div></div>;
 }
 
 export default List;

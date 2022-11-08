@@ -19,6 +19,7 @@ export const PokeProvider = ({ children }) => {
         .then((data) => setPokeData(data))
         .catch((err) => console.log(err));
     };
+
     fetchData();
   }, [pokeName]);
 
