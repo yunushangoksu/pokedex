@@ -1,5 +1,5 @@
 import React from "react";
-import PokeCard from "./pokecard/card";
+import List from "./list/list";
 import Form from "./form/form";
 import PokeDexLogo from "../assets/pokedexlogo.png";
 import { PokeProvider } from "../PokeContext";
@@ -10,7 +10,7 @@ function Index() {
       <img src={PokeDexLogo} alt="Logo" className="headerLogo" />
       <PokeProvider>
         <Form />
-        <PokeCard />
+        <List />
       </PokeProvider>
     </div>
   );

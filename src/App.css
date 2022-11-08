@@ -40,7 +40,7 @@
 .pokeWrapper {
   margin-top: 65px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(4, 1fr);
   align-items: center;
   justify-items: center;
@@ -54,8 +54,11 @@
   width: 230px;
   height: 360px;
   background-color: #ffffff;
+  margin-bottom: 15px;
 }
-
+.pokeCard:last-child {
+  margin-bottom: 0;
+}
 .pokeStats {
   display: flex;
   flex-direction: column;
