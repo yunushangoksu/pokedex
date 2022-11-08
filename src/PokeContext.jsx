@@ -4,17 +4,12 @@ export default PokeContext;
 
 export const PokeProvider = ({ children }) => {
   const [pokeData, setPokeData] = useState([]);
-  // const [pokeMoveData, setPokeMoveData] = useState();
   const [pokeName, setPokeName] = useState("ditto");
-  const dataToPass = {
-    pokeData,
-    pokeName,
-    setPokeName,
-  };
+  const [apiOffset, setApiOffset] = useState(0);
 
   const getAllPokemons = async () => {
     const res = await fetch(
-      "https://pokeapi.co/api/v2/pokemon?limit=22offset=0"
+      `https://pokeapi.co/api/v2/pokemon?offset=${apiOffset}&limit=${6}`
     );
     const data = await res.json();
     // -------
@@ -25,7 +20,8 @@ export const PokeProvider = ({ children }) => {
         );
         const data = await res.json();
         setPokeData((currentList) => [...currentList, data]);
-        await pokeData.sort((a, b) => a.id - b.id);
+        setApiOffset(apiOffset + 6);
+        pokeData.sort((a, b) => a.id - b.id);
       });
     }
 
@@ -36,28 +32,17 @@ export const PokeProvider = ({ children }) => {
     getAllPokemons();
   }, []);
 
-  // useEffect(() => {
-  //   const fetchData = () => {
-  //     fetch(`https://pokeapi.co/api/v2/pokemon/${pokeName}`)
-  //       .then((response) => response.json())
-  //       .then((data) => setPokeData(data))
-  //       .catch((err) => console.log(err));
-  //   };
+  const loadMore = () => {
+    getAllPokemons();
+    setApiOffset(apiOffset + 12);
+  };
 
-  //   fetchData();
-  // }, [pokeName]);
-
-  // useEffect(() => {
-  //   const fetchData = () => {
-  //     fetch(pokeData.moves[0].move.url)
-  //       .then((response) => response.json())
-  //       .then((data) => setPokeMoveData(data))
-  //       .catch((err) => console.log(err));
-  //   };
-  //   fetchData();
-  //   console.log(pokeData);
-  //   console.log(pokeMoveData);
-  // }, [pokeData]);
+  const dataToPass = {
+    pokeData,
+    pokeName,
+    setPokeName,
+    loadMore,
+  };
 
   return (
     <PokeContext.Provider value={dataToPass}>{children}</PokeContext.Provider>
