@@ -15,15 +15,22 @@ function Form() {
       event.preventDefault();
       return;
     }
+
     event.preventDefault();
 
-    data.setPokeName(inputValue);
+    data.setPokeName(inputValue.toLowerCase());
+    event.target.value = "";
   };
 
   return (
-    <div>
+    <div className="pokeForm">
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={onChangeInput} />
+        <input
+          type="text"
+          value={inputValue}
+          onChange={onChangeInput}
+          placeholder="Enter Pokémon Name!"
+        />
       </form>
     </div>
   );

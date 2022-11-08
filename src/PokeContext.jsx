@@ -21,12 +21,6 @@ export const PokeProvider = ({ children }) => {
     fetchData();
   }, [pokeName]);
 
-  //   await fetch("https://pokeapi.co/api/v2/move/144/")
-  //   .then((response) => response.json())
-  //   .then((data) => setPokeData(...pokeData, data))
-  //   .catch((err) => console.log(err));
-  // };
-
   return (
     <PokeContext.Provider value={dataToPass}>{children}</PokeContext.Provider>
   );

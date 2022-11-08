@@ -1,8 +1,33 @@
 .App {
   text-align: center;
+  background-color: #ffffff;
+  font-family: "pokedexfont", sans-serif;
+}
+
+@font-face {
+  font-family: pokedexfont;
+  src: url(/src/PKMN.ttf);
 }
 .headerLogo {
+  margin-top: 15px;
   width: 300px;
+}
+
+.pokeForm {
+  margin-top: 35px;
+}
+.pokeForm input {
+  width: 210px;
+  height: 30px;
+  font-size: large;
+  font-family: pokedexfont;
+  text-decoration: none;
+  border: 3px solid #ffcd00;
+  outline: 3px solid #356abc;
+}
+.pokeForm input::placeholder {
+  text-align: center;
+  font-size: small;
 }
 /* .pokecard {
   width: 95%;
@@ -12,12 +37,32 @@
   border: solid black 1px;
 } */
 
+.pokeWrapper {
+  margin-top: 65px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  justify-items: center;
+}
+
 .pokeCard {
   display: flex;
   flex-direction: column;
-  border: solid black 1px;
+  border: 3px solid #ffcd00;
+  outline: 3px solid #356abc;
   width: 230px;
   height: 350px;
+  background-color: #ffffff;
+}
+
+.name::first-letter,
+.attack1::first-letter,
+.attack2::first-letter {
+  text-transform: uppercase;
+}
+.name {
+  font-weight: bold;
 }
 .topBar {
   display: flex;
