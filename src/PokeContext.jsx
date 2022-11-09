@@ -30,11 +30,12 @@ export const PokeProvider = ({ children }) => {
 
   useEffect(() => {
     getAllPokemons();
+    //eslint-disable-next-line
   }, []);
 
   const loadMore = () => {
     getAllPokemons();
-    setApiOffset(apiOffset + 12);
+    setApiOffset(apiOffset + 6);
   };
 
   const dataToPass = {

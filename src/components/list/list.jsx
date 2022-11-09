@@ -4,6 +4,8 @@ import PokeCard from "../pokecard/card";
 
 function List() {
   const data = useContext(PokeContext);
+  data.pokeData.sort((a, b) => a.id - b.id);
+
   return (
     <>
       <div className="pokeWrapper">

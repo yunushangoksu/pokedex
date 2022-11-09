@@ -12,24 +12,28 @@ function PokeCard({
   return (
     <div className="pokeCard">
       <div className="topBar">
-        <div className="name">{pokeName}</div>
+        <div className="name">
+          <a href={`https://www.pokemon.com/us/pokedex/${pokeName}`}>
+            {pokeName ? pokeName : ""}
+          </a>
+        </div>
       </div>
       <div className="pokeImage">
-        <img src={pokeImg} alt="" />
+        <img src={pokeImg ? pokeImg : ""} alt="" />
       </div>
       <div className="bottomBar">
-        <div className="attack1">{pokeMove1}</div>
-        <div className="attack2">{pokeMove2}</div>
+        <div className="attack1">{pokeMove1 ? pokeMove1 : ""}</div>
+        <div className="attack2">{pokeMove2 ? pokeMove2 : ""}</div>
 
         <div className="pokeStats">
           <div className="hp">
-            <span>HP</span> <span>{pokeHp}</span>
+            <span>HP</span> <span>{pokeHp ? pokeHp : ""}</span>
           </div>
           <div className="attack">
-            <span>ATK</span> <span>{pokeAttack}</span>
+            <span>ATK</span> <span>{pokeAttack ? pokeAttack : ""}</span>
           </div>
           <div className="defense">
-            <span>DEF</span> <span>{pokeDefense}</span>
+            <span>DEF</span> <span>{pokeDefense ? pokeDefense : ""}</span>
           </div>
         </div>
       </div>

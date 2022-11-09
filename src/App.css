@@ -8,6 +8,10 @@
   font-family: pokedexfont;
   src: url(/src/PKMN.ttf);
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 .headerLogo {
   margin-top: 15px;
   width: 300px;
